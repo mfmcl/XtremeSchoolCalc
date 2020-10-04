@@ -38,5 +38,6 @@ public class XtremeSchoolCalc {
                 break;
         }
         sc.close();
+        //"Coomment"
     }
 }
