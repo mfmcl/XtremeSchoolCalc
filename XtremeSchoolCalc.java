@@ -6,8 +6,63 @@ import java.util.Scanner;
  */
 public class XtremeSchoolCalc {
 
+    
+
+    public static void main(String[] args) {
+        mainMenu();
+    }
+
+    public static void mainMenu() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("============================");
+        System.out.println("| Xtreme School Calculator |");
+        System.out.println("============================");
+        System.out.println("| What do you need help    |");
+        System.out.println("| with today?              |");
+        System.out.println("|   1. Sleep calculator    |");
+        System.out.println("|   2. Study hours         |");
+        System.out.println("|   3. Option 3            |");
+        System.out.println("|   4. Option 4            |");
+        System.out.println("|   5. Option 5            |");
+        System.out.println("|   6. Exit                |");
+        System.out.println("============================");
+        
+        System.out.println("Select option");
+        int selectedOption = sc.nextInt();
+
+        switch (selectedOption) {
+            case 1:
+                System.out.println("case 1");
+                break;
+            case 2:
+                System.out.println("case 2");
+                break;
+            case 3:
+                System.out.println("case 3");
+                break;
+            case 4:
+                System.out.println("case 4");
+                break;
+            case 5:
+                System.out.println("case 5");
+                break;
+            case 6:
+                System.out.println("case 6");
+                break;
+
+            default:
+            System.out.println("---------------------------------");
+            System.out.println("-!-Please enter a valid number-!-");
+            System.out.println("---------------------------------");
+            mainMenu();
+                break;
+        }
+        sc.close();
+    }
+
     public static void studyHours() {
-        int week;
+        int week = 0;
         Scanner scany = new Scanner(System.in);
         System.out.println("Year: ");
         int year = scany.nextInt();
@@ -80,7 +135,7 @@ public class XtremeSchoolCalc {
                     }
                    
                 } else {
-                    System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                    System.out.println("You have only quiet hours.");
                 }
                 break;
             case 3:
@@ -95,58 +150,5 @@ public class XtremeSchoolCalc {
         }
        
         scany.close();
-    }
-
-    public static void main(String[] args) {
-        mainMenu();
-    }
-
-    public static void mainMenu() {
-        Scanner sc = new Scanner(System.in);
-
-        System.out.println("============================");
-        System.out.println("| Xtreme School Calculator |");
-        System.out.println("============================");
-        System.out.println("| What do you need help    |");
-        System.out.println("| with today?              |");
-        System.out.println("|   1. Sleep calculator    |");
-        System.out.println("|   2. Study hours         |");
-        System.out.println("|   3. Option 3            |");
-        System.out.println("|   4. Option 4            |");
-        System.out.println("|   5. Option 5            |");
-        System.out.println("|   6. Exit                |");
-        System.out.println("============================");
-        
-        System.out.println("Select option");
-        int selectedOption = sc.nextInt();
-
-        switch (selectedOption) {
-            case 1:
-                System.out.println("case 1");
-                break;
-            case 2:
-                System.out.println("case 2");
-                break;
-            case 3:
-                System.out.println("case 3");
-                break;
-            case 4:
-                System.out.println("case 4");
-                break;
-            case 5:
-                System.out.println("case 5");
-                break;
-            case 6:
-                System.out.println("case 6");
-                break;
-
-            default:
-            System.out.println("---------------------------------");
-            System.out.println("-!-Please enter a valid number-!-");
-            System.out.println("---------------------------------");
-            mainMenu();
-                break;
-        }
-        sc.close();
     }
 }
