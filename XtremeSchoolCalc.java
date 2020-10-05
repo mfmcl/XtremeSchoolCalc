@@ -49,8 +49,9 @@ public class XtremeSchoolCalc {
                 System.out.println("case 5");
                 break;
             case 6:
-                System.out.println("C Ya!");
-s                break;
+                System.out.println("C Ya! (or Java Ya ;))");
+                System.exit(0);
+                break;
 
             default:
             System.out.println("---------------------------------");
