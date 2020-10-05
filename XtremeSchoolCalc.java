@@ -7,7 +7,94 @@ import java.util.Scanner;
 public class XtremeSchoolCalc {
 
     public static void studyHours() {
+        int week;
+        Scanner scany = new Scanner(System.in);
+        System.out.println("Year: ");
+        int year = scany.nextInt();
+        System.out.println("Term: ");
+        int term = scany.nextInt();
+        if (term == 1) {
+            System.out.println("Week of term 1: ");
+            week = scany.nextInt();
+            
+        } else {
+
+        }
+        switch (year) {
+            case 1:
+                System.out.println("Year 1 study hours: ");
+                    if (term == 1) {
+                        System.out.println("Term 1");
+                        switch (week) {
+                            case 1:
+                            case 2:
+                                System.out.println("You must stay in your room during the study hours.");
+                                break;
+                            case 3:
+                            case 4:
+                                System.out.println("You must stay in your own hall during the study hours. You may visit rooms on your hall.");
+                                break;
+                            case 5:
+                            case 6:
+                                System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                                break;
+                            case 7:
+                            case 8:
+                                System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                                break;
+                            default:
+                                System.out.println("Invalid week number!");
+                                break;
+                        }
+                       
+                    } else {
+                        System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                    }
+                
+                break;
+
+            case 2:
+                System.out.println("Year 2 study hours: ");
+                if (term == 1) {
+                    System.out.println("Term 1");
+                    switch (week) {
+                        case 1:
+                        case 2:
+                            System.out.println("You must stay in your room during the study hours.");
+                            break;
+                        case 3:
+                        case 4:
+                            System.out.println("You must stay in your own hall during the study hours. You may visit rooms on your hall.");
+                            break;
+                        case 5:
+                        case 6:
+                            System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                            break;
+                        case 7:
+                        case 8:
+                            System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                            break;
+                        default:
+                            System.out.println("Invalid week number!");
+                            break;
+                    }
+                   
+                } else {
+                    System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                }
+                break;
+            case 3:
+                
+                break;
+            case 4:
+                
+                break;
         
+            default:
+                break;
+        }
+       
+        scany.close();
     }
 
     public static void main(String[] args) {
@@ -23,7 +110,7 @@ public class XtremeSchoolCalc {
         System.out.println("| What do you need help    |");
         System.out.println("| with today?              |");
         System.out.println("|   1. Sleep calculator    |");
-        System.out.println("|   2. Option 2            |");
+        System.out.println("|   2. Study hours         |");
         System.out.println("|   3. Option 3            |");
         System.out.println("|   4. Option 4            |");
         System.out.println("|   5. Option 5            |");
