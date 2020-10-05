@@ -151,4 +151,52 @@ public class XtremeSchoolCalc {
        
         scany.close();
     }
+
+   
+
+    public static void sleepCalc() {
+        System.out.println("============================");
+        System.out.println("|     Sleep Calculator     |");
+        System.out.println("============================");
+
+    }
+
+    public static void hexDecBinConverterMenu() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.println("============================");
+        System.out.println("|  Hex-Dec-Bin Converter   |");
+        System.out.println("============================");
+        System.out.println("|   1. Hex to Dec & Bin    |");
+        System.out.println("|   2. Dec to Hex & Bin    |");
+        System.out.println("|   3. Bin to Hex & Dec    |");
+        System.out.println("|   4. Main Menu           |");
+        System.out.println("============================");
+        
+        System.out.println("Select option");
+        int selection = sc.nextInt();
+
+        switch (selection) {
+            case 1:
+                System.out.println("case 1");
+                break;
+            case 2:
+                System.out.println("case 2");
+                break;
+            case 3:
+                System.out.println("case 3");
+                break;
+            case 4:
+                mainMenu();
+                break;
+
+            default:
+                System.out.println("---------------------------------");
+                System.out.println("-!-Please enter a valid number-!-");
+                System.out.println("---------------------------------");
+                hexDecBinConverterMenu();
+                break;
+        }
+        sc.close();
+    }
 }
