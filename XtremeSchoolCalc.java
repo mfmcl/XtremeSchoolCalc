@@ -6,6 +6,10 @@ import java.util.Scanner;
  */
 public class XtremeSchoolCalc {
 
+    public static void studyHours() {
+        
+    }
+
     public static void main(String[] args) {
         mainMenu();
     }
