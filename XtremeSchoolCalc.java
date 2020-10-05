@@ -70,10 +70,8 @@ public class XtremeSchoolCalc {
         int term = scany.nextInt();
         if (term == 1) {
             System.out.println("Week of term 1: ");
-            week = scany.nextInt();
-            
+            week = scany.nextInt();  
         } else {
-
         }
         switch (year) {
             case 1:
@@ -101,13 +99,10 @@ public class XtremeSchoolCalc {
                                 System.out.println("Invalid week number!");
                                 break;
                         }
-                       
                     } else {
                         System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
                     }
-                
                 break;
-
             case 2:
                 System.out.println("Year 2 study hours: ");
                 if (term == 1) {
@@ -133,7 +128,6 @@ public class XtremeSchoolCalc {
                             System.out.println("Invalid week number!");
                             break;
                     }
-                   
                 } else {
                     System.out.println("You have only quiet hours.");
                 }
@@ -163,7 +157,6 @@ public class XtremeSchoolCalc {
                             System.out.println("Invalid week number!");
                             break;
                     }
-                   
                 } else {
                     System.out.println("You have only quiet hours.");
                 }
@@ -177,7 +170,6 @@ public class XtremeSchoolCalc {
                 System.out.println("Invalid year number!");
                 break;
         }
-       
         scany.close();
     }
 
