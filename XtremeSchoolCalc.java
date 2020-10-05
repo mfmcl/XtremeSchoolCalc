@@ -71,10 +71,8 @@ s                break;
         int term = scany.nextInt();
         if (term == 1) {
             System.out.println("Week of term 1: ");
-            week = scany.nextInt();
-            
+            week = scany.nextInt();  
         } else {
-
         }
         switch (year) {
             case 1:
@@ -102,13 +100,10 @@ s                break;
                                 System.out.println("Invalid week number!");
                                 break;
                         }
-                       
                     } else {
                         System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
                     }
-                
                 break;
-
             case 2:
                 System.out.println("Year 2 study hours: ");
                 if (term == 1) {
@@ -134,22 +129,48 @@ s                break;
                             System.out.println("Invalid week number!");
                             break;
                     }
-                   
                 } else {
                     System.out.println("You have only quiet hours.");
                 }
                 break;
             case 3:
-                
+                System.out.println("Year 3 study hours: ");
+                if (term == 1) {
+                    System.out.println("Term 1");
+                    switch (week) {
+                        case 1:
+                        case 2:
+                            System.out.println("You must stay in your room during the study hours.");
+                            break;
+                        case 3:
+                        case 4:
+                            System.out.println("You must stay in your own hall during the study hours. You may visit rooms on your hall.");
+                            break;
+                        case 5:
+                        case 6:
+                            System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                            break;
+                        case 7:
+                        case 8:
+                            System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                            break;
+                        default:
+                            System.out.println("Invalid week number!");
+                            break;
+                    }
+                } else {
+                    System.out.println("You have only quiet hours.");
+                }
                 break;
             case 4:
-                
+                System.out.println("Year 4 study hours: ");
+                System.out.println("You have only quiet hours.");
                 break;
         
             default:
+                System.out.println("Invalid year number!");
                 break;
         }
-       
         scany.close();
     }
 
