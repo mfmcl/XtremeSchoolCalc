@@ -169,10 +169,12 @@ public class XtremeSchoolCalc {
                 }
                 break;
             case 4:
-                
+                System.out.println("Year 4 study hours: ");
+                System.out.println("You have only quiet hours.");
                 break;
         
             default:
+                System.out.println("Invalid year number!");
                 break;
         }
        
