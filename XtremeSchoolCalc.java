@@ -6,8 +6,6 @@ import java.util.Scanner;
  */
 public class XtremeSchoolCalc {
 
-    
-
     public static void main(String[] args) {
         mainMenu();
     }
@@ -22,7 +20,7 @@ public class XtremeSchoolCalc {
         System.out.println("| with today?              |");
         System.out.println("|   1. Sleep calculator    |");
         System.out.println("|   2. Study hours         |");
-        System.out.println("|   3. Option 3            |");
+        System.out.println("|   3. Hex-Dec-Bin Convert |");
         System.out.println("|   4. Option 4            |");
         System.out.println("|   5. Option 5            |");
         System.out.println("|   6. Exit                |");
@@ -34,12 +32,15 @@ public class XtremeSchoolCalc {
         switch (selectedOption) {
             case 1:
                 System.out.println("case 1");
+                sleepCalc();
                 break;
             case 2:
                 System.out.println("case 2");
+                studyHours();
                 break;
             case 3:
                 System.out.println("case 3");
+                hexDecBinConverterMenu();
                 break;
             case 4:
                 System.out.println("case 4");
@@ -48,8 +49,8 @@ public class XtremeSchoolCalc {
                 System.out.println("case 5");
                 break;
             case 6:
-                System.out.println("case 6");
-                break;
+                System.out.println("C Ya!");
+s                break;
 
             default:
             System.out.println("---------------------------------");
