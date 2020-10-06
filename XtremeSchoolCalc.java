@@ -65,6 +65,9 @@ public class XtremeSchoolCalc {
 
     public static void studyHours() {
         //Study hours calulator method
+        System.out.println("==================================");
+        System.out.println("|     Study Hours calculator     |");
+        System.out.println("==================================");
         int week = 0;
         Scanner scany = new Scanner(System.in);
         //Ask for the students's year of study
@@ -75,7 +78,7 @@ public class XtremeSchoolCalc {
         int term = scany.nextInt();
         //If its the first term ask for the number of the week
         if (term == 1) {
-            System.out.println("Week of first term (1-7): ");
+            System.out.println("Week of first term (1-8): ");
             week = scany.nextInt();
         } else {
         }
@@ -302,6 +305,10 @@ public class XtremeSchoolCalc {
 
         hexDecBinConverterMenu();
         sc.close();
+    }
+
+    public static void nutritionCalculator(){
+        
     }
  
 }
