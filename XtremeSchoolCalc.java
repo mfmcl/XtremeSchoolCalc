@@ -72,14 +72,15 @@ public class XtremeSchoolCalc {
         System.out.println("==================================");
         Scanner scany = new Scanner(System.in);
         // Ask for the students's year of study
-        System.out.println("Year: ");
+        System.out.print("Year (1-4): ");
         year = scany.nextInt();
         // Ask for the current school year term
-        System.out.println("Term: ");
+        //FIXME: how many terms are there?
+        System.out.print("Term: ");
         term = scany.nextInt();
         // If its the first term ask for the number of the week
         if (term == 1) {
-            System.out.println("Week of first term (1-8): ");
+            System.out.print("Week of first term (1-8): ");
             week = scany.nextInt();
         } else {
         }
