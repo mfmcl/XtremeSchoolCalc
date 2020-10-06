@@ -25,7 +25,7 @@ public class XtremeSchoolCalc {
         System.out.println("|   5. Option 5            |");
         System.out.println("|   6. Exit                |");
         System.out.println("============================");
-        
+
         System.out.println("Select option");
         int selectedOption = sc.nextInt();
 
@@ -54,10 +54,10 @@ public class XtremeSchoolCalc {
                 break;
 
             default:
-            System.out.println("---------------------------------");
-            System.out.println("-!-Please enter a valid number-!-");
-            System.out.println("---------------------------------");
-            mainMenu();
+                System.out.println("---------------------------------");
+                System.out.println("-!-Please enter a valid number-!-");
+                System.out.println("---------------------------------");
+                mainMenu();
                 break;
         }
         sc.close();
@@ -72,38 +72,41 @@ public class XtremeSchoolCalc {
         int term = scany.nextInt();
         if (term == 1) {
             System.out.println("Week of term 1: ");
-            week = scany.nextInt();  
+            week = scany.nextInt();
         } else {
         }
         switch (year) {
             case 1:
                 System.out.println("Year 1 study hours: ");
-                    if (term == 1) {
-                        System.out.println("Term 1");
-                        switch (week) {
-                            case 1:
-                            case 2:
-                                System.out.println("You must stay in your room during the study hours.");
-                                break;
-                            case 3:
-                            case 4:
-                                System.out.println("You must stay in your own hall during the study hours. You may visit rooms on your hall.");
-                                break;
-                            case 5:
-                            case 6:
-                                System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
-                                break;
-                            case 7:
-                            case 8:
-                                System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
-                                break;
-                            default:
-                                System.out.println("Invalid week number!");
-                                break;
-                        }
-                    } else {
-                        System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                if (term == 1) {
+                    System.out.println("Term 1");
+                    switch (week) {
+                        case 1:
+                        case 2:
+                            System.out.println("You must stay in your room during the study hours.");
+                            break;
+                        case 3:
+                        case 4:
+                            System.out.println(
+                                    "You must stay in your own hall during the study hours. You may visit rooms on your hall.");
+                            break;
+                        case 5:
+                        case 6:
+                            System.out.println(
+                                    "You must stay at Astra during the study hours. You may visit other halls.");
+                            break;
+                        case 7:
+                        case 8:
+                            System.out.println(
+                                    "You must stay at Astra during the study hours. You may visit other halls.");
+                            break;
+                        default:
+                            System.out.println("Invalid week number!");
+                            break;
                     }
+                } else {
+                    System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                }
                 break;
             case 2:
                 System.out.println("Year 2 study hours: ");
@@ -116,15 +119,18 @@ public class XtremeSchoolCalc {
                             break;
                         case 3:
                         case 4:
-                            System.out.println("You must stay in your own hall during the study hours. You may visit rooms on your hall.");
+                            System.out.println(
+                                    "You must stay in your own hall during the study hours. You may visit rooms on your hall.");
                             break;
                         case 5:
                         case 6:
-                            System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                            System.out.println(
+                                    "You must stay at Astra during the study hours. You may visit other halls.");
                             break;
                         case 7:
                         case 8:
-                            System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                            System.out.println(
+                                    "You must stay at Astra during the study hours. You may visit other halls.");
                             break;
                         default:
                             System.out.println("Invalid week number!");
@@ -145,15 +151,18 @@ public class XtremeSchoolCalc {
                             break;
                         case 3:
                         case 4:
-                            System.out.println("You must stay in your own hall during the study hours. You may visit rooms on your hall.");
+                            System.out.println(
+                                    "You must stay in your own hall during the study hours. You may visit rooms on your hall.");
                             break;
                         case 5:
                         case 6:
-                            System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                            System.out.println(
+                                    "You must stay at Astra during the study hours. You may visit other halls.");
                             break;
                         case 7:
                         case 8:
-                            System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
+                            System.out.println(
+                                    "You must stay at Astra during the study hours. You may visit other halls.");
                             break;
                         default:
                             System.out.println("Invalid week number!");
@@ -167,15 +176,13 @@ public class XtremeSchoolCalc {
                 System.out.println("Year 4 study hours: ");
                 System.out.println("You have only quiet hours.");
                 break;
-        
+
             default:
                 System.out.println("Invalid year number!");
                 break;
         }
         scany.close();
     }
-
-   
 
     public static void sleepCalc() {
         System.out.println("============================");
@@ -195,7 +202,7 @@ public class XtremeSchoolCalc {
         System.out.println("|   3. Bin to Hex & Dec    |");
         System.out.println("|   4. Main Menu           |");
         System.out.println("============================");
-        
+
         System.out.println("Select option");
         int selection = sc.nextInt();
 
