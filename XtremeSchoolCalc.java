@@ -1,6 +1,5 @@
 import java.util.Scanner;
 
-
 /**
  * XtremeSchoolCalc
  * 
@@ -62,7 +61,7 @@ public class XtremeSchoolCalc {
     }
 
     public static void studyHours() {
-        //Defining all needed variables
+        // Defining all needed variables
         int year;
         int term;
         int week = 0;
@@ -75,7 +74,7 @@ public class XtremeSchoolCalc {
         System.out.print("Year (1-4): ");
         year = scany.nextInt();
         // Ask for the current school year term
-        //FIXME: how many terms are there?
+        // FIXME: how many terms are there?
         System.out.print("Term: ");
         term = scany.nextInt();
         // If its the first term ask for the number of the week
@@ -220,7 +219,7 @@ public class XtremeSchoolCalc {
 
     }
 
-    //TODO: Comments + exception handling
+    // TODO: Comments + exception handling
     public static void hexDecBinConverterMenu() {
         Scanner sc = new Scanner(System.in);
 
@@ -259,7 +258,8 @@ public class XtremeSchoolCalc {
         }
         sc.close();
     }
-    //TODO: Comments + exception handling
+
+    // TODO: Comments + exception handling
     public static void hexToDecBin() {
         Scanner sc = new Scanner(System.in);
 
@@ -276,7 +276,8 @@ public class XtremeSchoolCalc {
         hexDecBinConverterMenu();
         sc.close();
     }
-    //TODO: Comments + exception handling
+
+    // TODO: Comments + exception handling
     public static void decToHexBin() {
         Scanner sc = new Scanner(System.in);
 
@@ -293,7 +294,8 @@ public class XtremeSchoolCalc {
         hexDecBinConverterMenu();
         sc.close();
     }
-    //TODO: Comments + exception handling
+
+    // TODO: Comments + exception handling
     public static void binToDecHex() {
         Scanner sc = new Scanner(System.in);
 
@@ -312,7 +314,7 @@ public class XtremeSchoolCalc {
     }
 
     public static void nutritionCalculator() {
-        //Defining all needed variables
+        // Defining all needed variables
         int height;
         int weight;
         int age;
@@ -321,41 +323,43 @@ public class XtremeSchoolCalc {
         double BMRf = 0.0;
         int exercise;
         Scanner scany = new Scanner(System.in);
-        //Daily calorie intake calculator based on the BMR formula
+        // Daily calorie intake calculator based on the BMR formula
         System.out.println("==================================");
         System.out.println("|     BMR calorie calculator     |");
         System.out.println("==================================");
-        //Asking for the person's height
+        // Asking for the person's height
         System.out.print("Enter your height (cm): ");
         height = scany.nextInt();
-        //Asking for the person's weight
+        // Asking for the person's weight
         System.out.print("Enter your weight (kg): ");
         weight = scany.nextInt();
-         //Asking for the person's age
+        // Asking for the person's age
         System.out.print("Enter your age: ");
         age = scany.nextInt();
-        //Asking for the person's gender
+        // Asking for the person's gender
         System.out.print("Enter your gender (M or F): ");
         gender = scany.next();
 
         boolean male = gender == "M";
-        
+
         try {
-            boolean genderboo = gender=="M" || gender=="F";
+            boolean genderboo = gender == "M" || gender == "F";
         } catch (Exception e) {
-            //TODO: handle exception
+            // TODO: handle exception
             System.out.println("Enter 'M' for male or 'F' for female");
         }
 
-        /*BMR formula -> The Harris–Benedict equations revised by Mifflin and St Jeor in 1990 (newest revision of BMR formula)
-        Dividing the male and female formulas
-        */
+        /*
+         * BMR formula -> The Harris–Benedict equations revised by Mifflin and St Jeor
+         * in 1990 (newest revision of BMR formula) Dividing the male and female
+         * formulas
+         */
         if (male) {
             BMR1 = (10 * weight) + (6.25 * height) - (5 * age) + 5;
         } else {
             BMR1 = (10 * weight) + (6.25 * height) - (5 * age) - 161;
         }
-        //Asking for level of exercise
+        // Asking for level of exercise
 
         System.out.println("=========================================");
         System.out.println("|          Level of exercise            |");
@@ -370,7 +374,7 @@ public class XtremeSchoolCalc {
 
         System.out.println("How much exercise do you get?");
         exercise = scany.nextInt();
-        //Finding the final BMR value (BMRf) based on the BMR expenditure formulas
+        // Finding the final BMR value (BMRf) based on the BMR expenditure formulas
         switch (exercise) {
             case 1:
                 BMRf = BMR1 * 1.53;
@@ -380,18 +384,18 @@ public class XtremeSchoolCalc {
                 break;
             case 3:
                 BMRf = BMR1 * 2.25;
-        
+
             default:
-            System.out.println("*********************************");
-            System.out.println("    Invalid exercise number!     ");
-            System.out.println("*********************************");
+                System.out.println("*********************************");
+                System.out.println("    Invalid exercise number!     ");
+                System.out.println("*********************************");
                 break;
         }
-        //Printing out BMR value
+        // Printing out BMR value
         System.out.println("Your recommended daily minimal calorie intake is: " + BMRf);
         scany.close();
         mainMenu();
-        //End of nutritionCalculator method
+        // End of nutritionCalculator method
     }
- 
+
 }
