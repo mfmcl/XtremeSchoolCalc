@@ -208,6 +208,8 @@ public class XtremeSchoolCalc {
                 break;
         }
         scany.close();
+        
+        // FIXME: The mainMenu method gives an error. The same in the calorie calc method. Without it the code works fine.
         mainMenu();
         // End of studyHours method
     }
@@ -345,7 +347,6 @@ public class XtremeSchoolCalc {
         try {
             boolean genderboo = gender == "M" || gender == "F";
         } catch (Exception e) {
-            // TODO: handle exception
             System.out.println("Enter 'M' for male or 'F' for female");
         }
 
@@ -384,7 +385,7 @@ public class XtremeSchoolCalc {
                 break;
             case 3:
                 BMRf = BMR1 * 2.25;
-
+                break;
             default:
                 System.out.println("*********************************");
                 System.out.println("    Invalid exercise number!     ");
@@ -394,7 +395,6 @@ public class XtremeSchoolCalc {
         // Printing out BMR value
         System.out.println("Your recommended daily minimal calorie intake is: " + BMRf);
         scany.close();
-        mainMenu();
         // End of nutritionCalculator method
     }
 
