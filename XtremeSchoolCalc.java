@@ -44,6 +44,7 @@ public class XtremeSchoolCalc {
                 nutritionCalculator();
                 break;
             case 5:
+                System.out.println("case 5");
                 break;
             case 0:
                 System.out.println("Cya! (or Java ya)");
@@ -51,9 +52,9 @@ public class XtremeSchoolCalc {
                 break;
 
             default:
-                System.out.println("---------------------------------");
-                System.out.println("-!-Please enter a valid number-!-");
-                System.out.println("---------------------------------");
+                System.out.println("*********************************");
+                System.out.println("   Please enter a valid number   ");
+                System.out.println("*********************************");
                 mainMenu();
                 break;
         }
