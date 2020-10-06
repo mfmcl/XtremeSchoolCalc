@@ -64,20 +64,26 @@ public class XtremeSchoolCalc {
     }
 
     public static void studyHours() {
+        //Study hours calulator method
         int week = 0;
         Scanner scany = new Scanner(System.in);
+        //Ask for the students's year of study
         System.out.println("Year: ");
         int year = scany.nextInt();
+        //Ask for the current school year term
         System.out.println("Term: ");
         int term = scany.nextInt();
+        //If its the first term ask for the number of the week
         if (term == 1) {
-            System.out.println("Week of term 1: ");
+            System.out.println("Week of first term (1-7): ");
             week = scany.nextInt();
         } else {
         }
         switch (year) {
+            //Study hours for year 1 students
             case 1:
                 System.out.println("Year 1 study hours: ");
+                //Study hours for year 1 during term 1
                 if (term == 1) {
                     System.out.println("Term 1");
                     switch (week) {
@@ -101,15 +107,20 @@ public class XtremeSchoolCalc {
                                     "You must stay at Astra during the study hours. You may visit other halls.");
                             break;
                         default:
-                            System.out.println("Invalid week number!");
+                            System.out.println("*****************************");
+                            System.out.println("    Invalid week number!     ");
+                            System.out.println("*****************************");
                             break;
                     }
+                //Study hours for year 1 during the rest of the year
                 } else {
                     System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
                 }
                 break;
+            //Study hours for year 2 students
             case 2:
                 System.out.println("Year 2 study hours: ");
+                //Study hours for year 2 during term 1
                 if (term == 1) {
                     System.out.println("Term 1");
                     switch (week) {
@@ -133,15 +144,20 @@ public class XtremeSchoolCalc {
                                     "You must stay at Astra during the study hours. You may visit other halls.");
                             break;
                         default:
-                            System.out.println("Invalid week number!");
+                            System.out.println("*****************************");
+                            System.out.println("    Invalid week number!     ");
+                            System.out.println("*****************************");
                             break;
                     }
+                //Study hours for year 2 during the rest of the year
                 } else {
                     System.out.println("You have only quiet hours.");
                 }
                 break;
+            //Study hours for year 3 students
             case 3:
                 System.out.println("Year 3 study hours: ");
+                //Study hours for year 3 during term 1
                 if (term == 1) {
                     System.out.println("Term 1");
                     switch (week) {
@@ -165,23 +181,30 @@ public class XtremeSchoolCalc {
                                     "You must stay at Astra during the study hours. You may visit other halls.");
                             break;
                         default:
-                            System.out.println("Invalid week number!");
+                            System.out.println("*****************************");
+                            System.out.println("    Invalid week number!     ");
+                            System.out.println("*****************************");
                             break;
                     }
+                //Study hours for year 3 during the rest of the year
                 } else {
                     System.out.println("You have only quiet hours.");
                 }
                 break;
+            //Study hours for year 4 students
             case 4:
                 System.out.println("Year 4 study hours: ");
                 System.out.println("You have only quiet hours.");
                 break;
-
+            //Default message -> works as an error message
             default:
-                System.out.println("Invalid year number!");
+                System.out.println("*****************************");
+                System.out.println("    Invalid year number!     ");
+                System.out.println("*****************************");
                 break;
         }
         scany.close();
+    //End of studyHours method
     }
 
     public static void sleepCalc() {
