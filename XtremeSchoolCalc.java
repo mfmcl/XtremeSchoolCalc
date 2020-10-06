@@ -1,5 +1,6 @@
 import java.util.Scanner;
 
+
 /**
  * XtremeSchoolCalc
  * 
@@ -64,29 +65,29 @@ public class XtremeSchoolCalc {
     }
 
     public static void studyHours() {
-        //Study hours calulator method
+        // Study hours calulator method
         System.out.println("==================================");
         System.out.println("|     Study Hours calculator     |");
         System.out.println("==================================");
         int week = 0;
         Scanner scany = new Scanner(System.in);
-        //Ask for the students's year of study
+        // Ask for the students's year of study
         System.out.println("Year: ");
         int year = scany.nextInt();
-        //Ask for the current school year term
+        // Ask for the current school year term
         System.out.println("Term: ");
         int term = scany.nextInt();
-        //If its the first term ask for the number of the week
+        // If its the first term ask for the number of the week
         if (term == 1) {
             System.out.println("Week of first term (1-8): ");
             week = scany.nextInt();
         } else {
         }
         switch (year) {
-            //Study hours for year 1 students
+            // Study hours for year 1 students
             case 1:
                 System.out.println("Year 1 study hours: ");
-                //Study hours for year 1 during term 1
+                // Study hours for year 1 during term 1
                 if (term == 1) {
                     System.out.println("Term 1");
                     switch (week) {
@@ -115,15 +116,15 @@ public class XtremeSchoolCalc {
                             System.out.println("*****************************");
                             break;
                     }
-                //Study hours for year 1 during the rest of the year
+                    // Study hours for year 1 during the rest of the year
                 } else {
                     System.out.println("You must stay at Astra during the study hours. You may visit other halls.");
                 }
                 break;
-            //Study hours for year 2 students
+            // Study hours for year 2 students
             case 2:
                 System.out.println("Year 2 study hours: ");
-                //Study hours for year 2 during term 1
+                // Study hours for year 2 during term 1
                 if (term == 1) {
                     System.out.println("Term 1");
                     switch (week) {
@@ -152,15 +153,15 @@ public class XtremeSchoolCalc {
                             System.out.println("*****************************");
                             break;
                     }
-                //Study hours for year 2 during the rest of the year
+                    // Study hours for year 2 during the rest of the year
                 } else {
                     System.out.println("You have only quiet hours.");
                 }
                 break;
-            //Study hours for year 3 students
+            // Study hours for year 3 students
             case 3:
                 System.out.println("Year 3 study hours: ");
-                //Study hours for year 3 during term 1
+                // Study hours for year 3 during term 1
                 if (term == 1) {
                     System.out.println("Term 1");
                     switch (week) {
@@ -189,17 +190,17 @@ public class XtremeSchoolCalc {
                             System.out.println("*****************************");
                             break;
                     }
-                //Study hours for year 3 during the rest of the year
+                    // Study hours for year 3 during the rest of the year
                 } else {
                     System.out.println("You have only quiet hours.");
                 }
                 break;
-            //Study hours for year 4 students
+            // Study hours for year 4 students
             case 4:
                 System.out.println("Year 4 study hours: ");
                 System.out.println("You have only quiet hours.");
                 break;
-            //Default message -> works as an error message
+            // Default message -> works as an error message
             default:
                 System.out.println("*****************************");
                 System.out.println("    Invalid year number!     ");
@@ -207,7 +208,7 @@ public class XtremeSchoolCalc {
                 break;
         }
         scany.close();
-    //End of studyHours method
+        // End of studyHours method
     }
 
     public static void sleepCalc() {
@@ -262,9 +263,9 @@ public class XtremeSchoolCalc {
         System.out.print("| Enter hexadecimal number (ex. 2F): ");
 
         String hex = sc.next();
-        int dec = Integer.parseInt(hex, 16);       
+        int dec = Integer.parseInt(hex, 16);
         String bin = Integer.toBinaryString(dec);
-     
+
         System.out.println("| Hexadecimal: " + hex);
         System.out.println("| Decimal:     " + dec);
         System.out.println("| Binary:      " + bin);
@@ -278,10 +279,10 @@ public class XtremeSchoolCalc {
 
         System.out.print("| Enter decimal number (ex. 2F): ");
 
-        int dec = sc.nextInt();       
+        int dec = sc.nextInt();
         String hex = Integer.toHexString(dec);
         String bin = Integer.toBinaryString(dec);
-     
+
         System.out.println("| Decimal:     " + dec);
         System.out.println("| Hexadecimal: " + hex);
         System.out.println("| Binary:      " + bin);
@@ -296,9 +297,9 @@ public class XtremeSchoolCalc {
         System.out.print("| Enter binary number (ex. 2F): ");
 
         String bin = sc.next();
-        int dec = Integer.parseInt(bin, 2);       
+        int dec = Integer.parseInt(bin, 2);
         String hex = Integer.toHexString(dec);
-     
+
         System.out.println("| Binary:      " + bin);
         System.out.println("| Decimal:     " + dec);
         System.out.println("| Hexadecimal: " + hex);
@@ -307,8 +308,12 @@ public class XtremeSchoolCalc {
         sc.close();
     }
 
-    public static void nutritionCalculator(){
-        
+    public static void nutritionCalculator() {
+        int height;
+        int weight;
+        int age;
+        String gender;
+
     }
  
 }
