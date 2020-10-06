@@ -21,8 +21,8 @@ public class XtremeSchoolCalc {
         System.out.println("| with today?              |");
         System.out.println("|   1. Sleep calculator    |");
         System.out.println("|   2. Study hours         |");
-        System.out.println("|   3. Hex-Dec-Bin Convert |");
-        System.out.println("|   4. Calorie Calculato   |");
+        System.out.println("|   3. Hex-dec-bin         |");
+        System.out.println("|   4. Calorie calc        |");
         System.out.println("|   5. Option 5            |");
         System.out.println("|   0. Exit                |");
         System.out.println("============================");
@@ -32,26 +32,21 @@ public class XtremeSchoolCalc {
 
         switch (selectedOption) {
             case 1:
-                System.out.println("case 1");
                 sleepCalc();
                 break;
             case 2:
-                System.out.println("case 2");
                 studyHours();
                 break;
             case 3:
-                System.out.println("case 3");
                 hexDecBinConverterMenu();
                 break;
             case 4:
-                System.out.println("case 4");
                 nutritionCalculator();
                 break;
             case 5:
-                System.out.println("case 5");
                 break;
             case 0:
-                System.out.println("C Ya! (or Java Ya ;))");
+                System.out.println("Cya! (or Java ya)");
                 System.exit(0);
                 break;
 
@@ -212,6 +207,7 @@ public class XtremeSchoolCalc {
                 break;
         }
         scany.close();
+        mainMenu();
         // End of studyHours method
     }
 
@@ -222,6 +218,7 @@ public class XtremeSchoolCalc {
 
     }
 
+    //TODO: Comments + exception handling
     public static void hexDecBinConverterMenu() {
         Scanner sc = new Scanner(System.in);
 
@@ -260,7 +257,7 @@ public class XtremeSchoolCalc {
         }
         sc.close();
     }
-
+    //TODO: Comments + exception handling
     public static void hexToDecBin() {
         Scanner sc = new Scanner(System.in);
 
@@ -277,7 +274,7 @@ public class XtremeSchoolCalc {
         hexDecBinConverterMenu();
         sc.close();
     }
-
+    //TODO: Comments + exception handling
     public static void decToHexBin() {
         Scanner sc = new Scanner(System.in);
 
@@ -294,7 +291,7 @@ public class XtremeSchoolCalc {
         hexDecBinConverterMenu();
         sc.close();
     }
-
+    //TODO: Comments + exception handling
     public static void binToDecHex() {
         Scanner sc = new Scanner(System.in);
 
@@ -327,17 +324,17 @@ public class XtremeSchoolCalc {
         System.out.println("|     BMR calorie calculator     |");
         System.out.println("==================================");
         //Asking for the person's height
-        System.out.println("Enter your height (cm): ");
+        System.out.print("Enter your height (cm): ");
         height = scany.nextInt();
         //Asking for the person's weight
-        System.out.println("Enter your weight (kg): ");
+        System.out.print("Enter your weight (kg): ");
         weight = scany.nextInt();
          //Asking for the person's age
-        System.out.println("Enter your age: ");
+        System.out.print("Enter your age: ");
         age = scany.nextInt();
         //Asking for the person's gender
-        System.out.println("Enter your gender (M or F): ");
-        gender = scany.nextLine();
+        System.out.print("Enter your gender (M or F): ");
+        gender = scany.next();
 
         boolean male = gender == "M";
         
@@ -357,22 +354,19 @@ public class XtremeSchoolCalc {
             BMR1 = (10 * weight) + (6.25 * height) - (5 * age) - 161;
         }
         //Asking for level of exercise
-        System.out.println("==========================================================================================");
-        System.out.println("|                                    Level of exercise                                   |");
-        System.out.println("==========================================================================================");
-        System.out.println("==========================================================================================");
-        System.out.println("|                               Sedentary or light activity                              |");
-        System.out.println("(f.e. Office worker getting little or no exercise)");
-        System.out.println("Type in number 1");
-        System.out.println("==========================================================================================");
-        System.out.println("|                               Active or moderately active                              |");
-        System.out.println("(f.e. Construction worker or person running one hour daily)");
-        System.out.println("Type in number 2");
-        System.out.println("==========================================================================================");
-        System.out.println("|                                    Vigorously active                                   |");
-        System.out.println("(f.e. Agricultural worker (non mechanized) or person swimming two hours daily)");
-        System.out.println("Type in number 3");
-        System.out.println("==========================================================================================");
+
+        System.out.println("=========================================");
+        System.out.println("|          Level of exercise            |");
+        System.out.println("=========================================");
+        System.out.println("|  1. Sedentary or light activity       |");
+        System.out.println("|       (i.e. little or no exercise)    |");
+        System.out.println("|  2. Active or moderately active       |");
+        System.out.println("|       (i.e. running one hour daily)   |");
+        System.out.println("|  3. Vigorously active                 |");
+        System.out.println("|       (i.e. swimming two hours daily) |");
+        System.out.println("=========================================");
+
+        System.out.println("How much exercise do you get?");
         exercise = scany.nextInt();
         //Finding the final BMR value (BMRf) based on the BMR expenditure formulas
         switch (exercise) {
@@ -394,6 +388,7 @@ public class XtremeSchoolCalc {
         //Printing out BMR value
         System.out.println("Your recommended daily minimal calorie intake is: " + BMRf);
         scany.close();
+        mainMenu();
         //End of nutritionCalculator method
     }
  
