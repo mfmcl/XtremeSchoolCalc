@@ -65,18 +65,21 @@ public class XtremeSchoolCalc {
     }
 
     public static void studyHours() {
+        //Defining all needed variables
+        int year;
+        int term;
+        int week = 0;
         // Study hours calulator method
         System.out.println("==================================");
         System.out.println("|     Study Hours calculator     |");
         System.out.println("==================================");
-        int week = 0;
         Scanner scany = new Scanner(System.in);
         // Ask for the students's year of study
         System.out.println("Year: ");
-        int year = scany.nextInt();
+        year = scany.nextInt();
         // Ask for the current school year term
         System.out.println("Term: ");
-        int term = scany.nextInt();
+        term = scany.nextInt();
         // If its the first term ask for the number of the week
         if (term == 1) {
             System.out.println("Week of first term (1-8): ");
@@ -309,11 +312,88 @@ public class XtremeSchoolCalc {
     }
 
     public static void nutritionCalculator() {
+        //Defining all needed variables
         int height;
         int weight;
         int age;
         String gender;
+        double BMR1;
+        double BMRf = 0.0;
+        int exercise;
+        Scanner scany = new Scanner(System.in);
+        //Daily calorie intake calculator based on the BMR formula
+        System.out.println("==================================");
+        System.out.println("|     BMR calorie calculator     |");
+        System.out.println("==================================");
+        //Asking for the person's height
+        System.out.println("Enter your height (cm): ");
+        height = scany.nextInt();
+        //Asking for the person's weight
+        System.out.println("Enter your weight (kg): ");
+        weight = scany.nextInt();
+         //Asking for the person's age
+        System.out.println("Enter your age: ");
+        age = scany.nextInt();
+        //Asking for the person's gender
+        System.out.println("Enter your gender (M or F): ");
+        gender = scany.nextLine();
 
+        boolean male = gender == "M";
+        
+        try {
+            boolean genderboo = gender=="M" || gender=="F";
+        } catch (Exception e) {
+            //TODO: handle exception
+            System.out.println("Enter 'M' for male or 'F' for female");
+        }
+
+        /*BMR formula -> The Harris–Benedict equations revised by Mifflin and St Jeor in 1990 (newest revision of BMR formula)
+        Dividing the male and female formulas
+        */
+        if (male) {
+            BMR1 = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+        } else {
+            BMR1 = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+        }
+        //Asking for level of exercise
+        System.out.println("==========================================================================================");
+        System.out.println("|                                    Level of exercise                                   |");
+        System.out.println("==========================================================================================");
+        System.out.println("==========================================================================================");
+        System.out.println("|                               Sedentary or light activity                              |");
+        System.out.println("(f.e. Office worker getting little or no exercise)");
+        System.out.println("Type in number 1");
+        System.out.println("==========================================================================================");
+        System.out.println("|                               Active or moderately active                              |");
+        System.out.println("(f.e. Construction worker or person running one hour daily)");
+        System.out.println("Type in number 2");
+        System.out.println("==========================================================================================");
+        System.out.println("|                                    Vigorously active                                   |");
+        System.out.println("(f.e. Agricultural worker (non mechanized) or person swimming two hours daily)");
+        System.out.println("Type in number 3");
+        System.out.println("==========================================================================================");
+        exercise = scany.nextInt();
+        //Finding the final BMR value (BMRf) based on the BMR expenditure formulas
+        switch (exercise) {
+            case 1:
+                BMRf = BMR1 * 1.53;
+                break;
+            case 2:
+                BMRf = BMR1 * 1.76;
+                break;
+            case 3:
+                BMRf = BMR1 * 2.25;
+        
+            default:
+            System.out.println("*********************************");
+            System.out.println("    Invalid exercise number!     ");
+            System.out.println("*********************************");
+                break;
+        }
+        //Printing out BMR value
+        System.out.println("Your recommended daily minimal calorie intake is: " + BMRf);
+        scany.close();
+        //End of nutritionCalculator method
     }
  
 }
