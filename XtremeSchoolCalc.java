@@ -22,7 +22,7 @@ public class XtremeSchoolCalc {
         System.out.println("|   1. Sleep calculator    |");
         System.out.println("|   2. Study hours         |");
         System.out.println("|   3. Hex-Dec-Bin Convert |");
-        System.out.println("|   4. Option 4            |");
+        System.out.println("|   4. Calorie Calculato   |");
         System.out.println("|   5. Option 5            |");
         System.out.println("|   0. Exit                |");
         System.out.println("============================");
@@ -45,6 +45,7 @@ public class XtremeSchoolCalc {
                 break;
             case 4:
                 System.out.println("case 4");
+                nutritionCalculator();
                 break;
             case 5:
                 System.out.println("case 5");
