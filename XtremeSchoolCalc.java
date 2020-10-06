@@ -23,7 +23,7 @@ public class XtremeSchoolCalc {
         System.out.println("|   3. Hex-Dec-Bin Convert |");
         System.out.println("|   4. Option 4            |");
         System.out.println("|   5. Option 5            |");
-        System.out.println("|   6. Exit                |");
+        System.out.println("|   0. Exit                |");
         System.out.println("============================");
 
         System.out.println("Select option");
@@ -48,7 +48,7 @@ public class XtremeSchoolCalc {
             case 5:
                 System.out.println("case 5");
                 break;
-            case 6:
+            case 0:
                 System.out.println("C Ya! (or Java Ya ;))");
                 System.exit(0);
                 break;
@@ -197,10 +197,10 @@ public class XtremeSchoolCalc {
         System.out.println("============================");
         System.out.println("|  Hex-Dec-Bin Converter   |");
         System.out.println("============================");
-        System.out.println("|   1. Hex to Dec & Bin    |");
-        System.out.println("|   2. Dec to Hex & Bin    |");
-        System.out.println("|   3. Bin to Hex & Dec    |");
-        System.out.println("|   4. Main Menu           |");
+        System.out.println("|   1. Enter hexadecimal   |");
+        System.out.println("|   2. Enter decimal       |");
+        System.out.println("|   3. Enter binary        |");
+        System.out.println("|   0. Main Menu           |");
         System.out.println("============================");
 
         System.out.println("Select option");
@@ -208,15 +208,15 @@ public class XtremeSchoolCalc {
 
         switch (selection) {
             case 1:
-                System.out.println("case 1");
+                hexToDecBin();
                 break;
             case 2:
-                System.out.println("case 2");
+                decToHexBin();
                 break;
             case 3:
-                System.out.println("case 3");
+                binToDecHex();
                 break;
-            case 4:
+            case 0:
                 mainMenu();
                 break;
 
@@ -229,4 +229,56 @@ public class XtremeSchoolCalc {
         }
         sc.close();
     }
+
+    public static void hexToDecBin() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("| Enter hexadecimal number (ex. 2F): ");
+
+        String hex = sc.next();
+        int dec = Integer.parseInt(hex, 16);       
+        String bin = Integer.toBinaryString(dec);
+     
+        System.out.println("| Hexadecimal: " + hex);
+        System.out.println("| Decimal:     " + dec);
+        System.out.println("| Binary:      " + bin);
+
+        hexDecBinConverterMenu();
+        sc.close();
+    }
+
+    public static void decToHexBin() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("| Enter decimal number (ex. 2F): ");
+
+        int dec = sc.nextInt();       
+        String hex = Integer.toHexString(dec);
+        String bin = Integer.toBinaryString(dec);
+     
+        System.out.println("| Decimal:     " + dec);
+        System.out.println("| Hexadecimal: " + hex);
+        System.out.println("| Binary:      " + bin);
+
+        hexDecBinConverterMenu();
+        sc.close();
+    }
+
+    public static void binToDecHex() {
+        Scanner sc = new Scanner(System.in);
+
+        System.out.print("| Enter binary number (ex. 2F): ");
+
+        String bin = sc.next();
+        int dec = Integer.parseInt(bin, 2);       
+        String hex = Integer.toHexString(dec);
+     
+        System.out.println("| Binary:      " + bin);
+        System.out.println("| Decimal:     " + dec);
+        System.out.println("| Hexadecimal: " + hex);
+
+        hexDecBinConverterMenu();
+        sc.close();
+    }
+ 
 }
