@@ -10,7 +10,7 @@ public class XtremeSchoolCalc {
         mainMenu();
     }
 
-    public static void mainMenu() {
+    public static void mainMenu() { // main menu, user selects what they want to calculate
         Scanner sc = new Scanner(System.in);
 
         System.out.println("============================");
@@ -29,7 +29,7 @@ public class XtremeSchoolCalc {
         System.out.println("Select option");
         int selectedOption = sc.nextInt();
 
-        switch (selectedOption) {
+        switch (selectedOption) { // menu options
             case 1:
                 sleepCalc();
                 break;
@@ -45,7 +45,7 @@ public class XtremeSchoolCalc {
             case 5:
                 System.out.println("case 5");
                 break;
-            case 0:
+            case 0: // ends program
                 System.out.println("Cya! (or Java ya)");
                 System.exit(0);
                 break;
@@ -207,6 +207,7 @@ public class XtremeSchoolCalc {
                 System.out.println("*****************************");
                 break;
         }
+        mainMenu();
         scany.close();
         
         // End of studyHours method
@@ -219,8 +220,8 @@ public class XtremeSchoolCalc {
 
     }
 
-    // TODO: Comments + exception handling
-    public static void hexDecBinConverterMenu() {
+    // TODO: exception handling
+    public static void hexDecBinConverterMenu() { // Converts numbers to/from base 2, 10, 16 
         Scanner sc = new Scanner(System.in);
 
         System.out.println("============================");
@@ -235,7 +236,7 @@ public class XtremeSchoolCalc {
         System.out.println("Select option");
         int selection = sc.nextInt();
 
-        switch (selection) {
+        switch (selection) { //selects input format
             case 1:
                 hexToDecBin();
                 break;
@@ -245,7 +246,7 @@ public class XtremeSchoolCalc {
             case 3:
                 binToDecHex();
                 break;
-            case 0:
+            case 0: // back to main menu
                 mainMenu();
                 break;
 
@@ -259,56 +260,62 @@ public class XtremeSchoolCalc {
         sc.close();
     }
 
-    // TODO: Comments + exception handling
-    public static void hexToDecBin() {
+    // TODO: exception handling
+    public static void hexToDecBin() { // converts hexadecimal to decimal and binary
         Scanner sc = new Scanner(System.in);
-
         System.out.print("| Enter hexadecimal number (ex. 2F): ");
 
+        // get hex input, convert to decimal and binary
         String hex = sc.next();
         int dec = Integer.parseInt(hex, 16);
         String bin = Integer.toBinaryString(dec);
 
+        // result
         System.out.println("| Hexadecimal: " + hex);
         System.out.println("| Decimal:     " + dec);
         System.out.println("| Binary:      " + bin);
-
+      
+        // back to converter menu
         hexDecBinConverterMenu();
         sc.close();
     }
 
-    // TODO: Comments + exception handling
-    public static void decToHexBin() {
+    // TODO: exception handling
+    public static void decToHexBin() { // converts decimal to hexadecimal and binary
         Scanner sc = new Scanner(System.in);
-
         System.out.print("| Enter decimal number (ex. 2F): ");
 
+        // get decimal input, convert to hex and binary
         int dec = sc.nextInt();
         String hex = Integer.toHexString(dec);
         String bin = Integer.toBinaryString(dec);
 
+        // result
         System.out.println("| Decimal:     " + dec);
         System.out.println("| Hexadecimal: " + hex);
         System.out.println("| Binary:      " + bin);
 
+        // back to converter menu
         hexDecBinConverterMenu();
         sc.close();
     }
 
-    // TODO: Comments + exception handling
-    public static void binToDecHex() {
+    // TODO: exception handling
+    public static void binToDecHex() { // converts binary to decimal and hexadecimal
         Scanner sc = new Scanner(System.in);
-
         System.out.print("| Enter binary number (ex. 2F): ");
 
+        // get binary input, convert to decimal and hex
         String bin = sc.next();
         int dec = Integer.parseInt(bin, 2);
         String hex = Integer.toHexString(dec);
 
+        // result
         System.out.println("| Binary:      " + bin);
         System.out.println("| Decimal:     " + dec);
         System.out.println("| Hexadecimal: " + hex);
 
+        // back to converter menu
         hexDecBinConverterMenu();
         sc.close();
     }
@@ -392,6 +399,7 @@ public class XtremeSchoolCalc {
         }
         // Printing out BMR value
         System.out.println("Your recommended daily minimal calorie intake is: " + BMRf);
+        mainMenu();
         scany.close();
         // End of nutritionCalculator method
     }
