@@ -209,8 +209,6 @@ public class XtremeSchoolCalc {
         }
         scany.close();
         
-        // FIXME: The mainMenu method gives an error. The same in the calorie calc method. Without it the code works fine.
-        mainMenu();
         // End of studyHours method
     }
 
