@@ -476,7 +476,7 @@ public class XtremeSchoolCalc {
         System.out.println("| For 7.5 hours of sleep wake up at: " + formatter.format(timeIn5cycles) + " |");
         System.out.println("| For 9 hours of sleep wake up at:   " + formatter.format(timeIn6cycles) + " |");
         System.out.println("============================================");
-
+        mainMenu();
     }
 
 }
