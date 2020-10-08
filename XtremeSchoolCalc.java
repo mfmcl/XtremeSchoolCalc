@@ -44,37 +44,46 @@ public class XtremeSchoolCalc {
         System.out.println("|   0. " + ANSI_BLUE   + "Exit             " + ANSI_RESET + "   |");
         System.out.println("============================");
 
-        System.out.print("| Select option: ");
-        int selectedOption = sc.nextInt();
-
-        switch (selectedOption) { // menu options
-            case 1:
-                sleepCalc();
-                break;
-            case 2:
-                studyHours();
-                break;
-            case 3:
-                hexDecBinConverterMenu();
-                break;
-            case 4:
-                nutritionCalculator();
-                break;
-            case 5:
-                powerOfTwo();
-                break;
-            case 0: // ends program
-                System.out.println("| Cya! (or" + ANSI_RED + " Java " + ANSI_RESET + "ya) |");
-                System.exit(0);
-                break;
-
-            default:
-                System.out.println("*********************************");
-                System.out.println("   Please enter a valid number   ");
-                System.out.println("*********************************");
-                mainMenu();
-                break;
+        try {
+            System.out.print("| Select option: ");
+            int selectedOption = sc.nextInt();
+            switch (selectedOption) { // menu options
+                case 1:
+                    sleepCalc();
+                    break;
+                case 2:
+                    studyHours();
+                    break;
+                case 3:
+                    hexDecBinConverterMenu();
+                    break;
+                case 4:
+                    nutritionCalculator();
+                    break;
+                case 5:
+                    powerOfTwo();
+                    break;
+                case 0: // ends program
+                    System.out.println("| Cya! (or" + ANSI_RED + " Java " + ANSI_RESET + "ya) |");
+                    System.exit(0);
+                    break;
+    
+                default:
+                    System.out.println("*********************************");
+                    System.out.println("   " + ANSI_RED + "Please enter a valid number" + ANSI_RESET + "   ");
+                    System.out.println("*********************************");
+                    mainMenu();
+                    break;
+            }
+    
+        } catch (Exception e) {
+            System.out.println("*********************************");
+            System.out.println("   " + ANSI_RED + "Please enter a valid number" + ANSI_RESET + "   ");
+            System.out.println("*********************************");
+            mainMenu();
+        } finally {
         }
+
         sc.close();
     }
 
@@ -129,7 +138,7 @@ public class XtremeSchoolCalc {
                             break;
                         default:
                             System.out.println("*****************************");
-                            System.out.println("    Invalid week number!     ");
+                            System.out.println("   " + ANSI_RED + "Invalid week number" + ANSI_RESET + "   ");
                             System.out.println("*****************************");
                             break;
                     }
@@ -166,7 +175,7 @@ public class XtremeSchoolCalc {
                             break;
                         default:
                             System.out.println("*****************************");
-                            System.out.println("    Invalid week number!     ");
+                            System.out.println("   " + ANSI_RED + "Invalid week number" + ANSI_RESET + "   ");
                             System.out.println("*****************************");
                             break;
                     }
@@ -203,7 +212,7 @@ public class XtremeSchoolCalc {
                             break;
                         default:
                             System.out.println("*****************************");
-                            System.out.println("    Invalid week number!     ");
+                            System.out.println("   " + ANSI_RED + "Invalid week number" + ANSI_RESET + "   ");
                             System.out.println("*****************************");
                             break;
                     }
@@ -220,7 +229,7 @@ public class XtremeSchoolCalc {
             // Default message -> works as an error message
             default:
                 System.out.println("*****************************");
-                System.out.println("    Invalid year number!     ");
+                System.out.println("   " + ANSI_RED + "Invalid year number" + ANSI_RESET + "   ");
                 System.out.println("*****************************");
                 break;
         }
@@ -230,7 +239,6 @@ public class XtremeSchoolCalc {
         // End of studyHours method
     }
 
-    // TODO: exception handling
     public static void hexDecBinConverterMenu() { // Converts numbers to/from base 2, 10, 16
         Scanner sc = new Scanner(System.in);
 
@@ -261,16 +269,15 @@ public class XtremeSchoolCalc {
                 break;
 
             default:
-                System.out.println("---------------------------------");
-                System.out.println("-!-Please enter a valid number-!-");
-                System.out.println("---------------------------------");
+                    System.out.println("*********************************");
+                    System.out.println("   " + ANSI_RED + "Please enter a valid number" + ANSI_RESET + "   ");
+                    System.out.println("*********************************");
                 hexDecBinConverterMenu();
                 break;
         }
         sc.close();
     }
 
-    // TODO: exception handling
     public static void hexToDecBin() { // converts hexadecimal to decimal and binary
         Scanner sc = new Scanner(System.in);
         System.out.print("| Enter hexadecimal number (ex. 2F): ");
@@ -290,7 +297,6 @@ public class XtremeSchoolCalc {
         sc.close();
     }
 
-    // TODO: exception handling
     public static void decToHexBin() { // converts decimal to hexadecimal and binary
         Scanner sc = new Scanner(System.in);
         System.out.print("| Enter decimal number (ex. 2F): ");
@@ -310,7 +316,6 @@ public class XtremeSchoolCalc {
         sc.close();
     }
 
-    // TODO: exception handling
     public static void binToDecHex() { // converts binary to decimal and hexadecimal
         Scanner sc = new Scanner(System.in);
         System.out.print("| Enter binary number (ex. 2F): ");
@@ -331,7 +336,6 @@ public class XtremeSchoolCalc {
     }
 
     public static void nutritionCalculator() {
-        // TODO: Have to fix this shit
 
         // Defining all needed variables
         int height;
@@ -401,10 +405,10 @@ public class XtremeSchoolCalc {
                 BMRf = BMR1 * 2.25;
                 break;
             default:
-                System.out.println("*********************************");
-                System.out.println("    Invalid exercise number!     ");
-                System.out.println("*********************************");
-                break;
+            System.out.println("*********************************");
+            System.out.println("   " + ANSI_RED + "Invalid exercise number" + ANSI_RESET + "   ");
+            System.out.println("*********************************");
+        break;
         }
         // Printing out BMR value
         System.out.println("Your recommended minimum daily calorie intake is: " + BMRf);
@@ -459,9 +463,9 @@ public class XtremeSchoolCalc {
                 mainMenu();
                 break;
             default:
-                System.out.println("*********************************");
-                System.out.println("   Please enter a valid number   ");
-                System.out.println("*********************************");
+                    System.out.println("*********************************");
+                    System.out.println("   " + ANSI_RED + "Please enter a valid number" + ANSI_RESET + "   ");
+                    System.out.println("*********************************");
                 sleepCalc();
                 break;
         }
