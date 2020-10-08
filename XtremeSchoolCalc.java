@@ -217,7 +217,7 @@ public class XtremeSchoolCalc {
         System.out.println("============================");
         System.out.println("|     Sleep Calculator     |");
         System.out.println("============================");
-        
+
     }
 
     // TODO: exception handling
@@ -398,7 +398,7 @@ public class XtremeSchoolCalc {
                 break;
         }
         // Printing out BMR value
-        System.out.println("Your recommended daily minimal calorie intake is: " + BMRf);
+        System.out.println("Your recommended minimum daily calorie intake is: " + BMRf);
         mainMenu();
         scany.close();
         // End of nutritionCalculator method
