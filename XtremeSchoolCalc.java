@@ -16,7 +16,7 @@ import java.util.Scanner;
  * 4. BMR calorie calculator
  *      Calculate daily recommended calorie intake based on your height, age, weight and amount of exercise
  * 5. 
- * //TODO: add description for the number funciton
+ *      Returns a sequence of numbers lower than 100 which are the 
  */
 public class XtremeSchoolCalc {
 
@@ -417,11 +417,14 @@ public class XtremeSchoolCalc {
     public static void powerOfTwo() {
         double input;
         double output;
+        double repeat;
         System.out.println("");
         Scanner scany = new Scanner(System.in);
         input = scany.nextDouble();
-        output = Math.pow(input, 2);
-        System.out.println("The number " + input + " squared is equal to: " + output);
+        repeat = Math.pow(input, 2);
+        for(output = repeat; output <= 100; output*=2 ) {
+            System.out.println("The number " + input + " squared is equal to: /n" + output);
+        }
 
         scany.close();
     }
