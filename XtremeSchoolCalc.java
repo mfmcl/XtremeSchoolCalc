@@ -19,8 +19,8 @@ import java.util.Scanner;
  *      Convert numbers between base 2, 10 and 16!
  * 4. BMR calorie calculator
  *      Calculate daily recommended calorie intake based on your height, age, weight and amount of exercise
- * 5. 
- *      Returns a sequence of numbers lower than 100 which are the 
+ * 5. Power of 2 calculator
+ *      Returns a sequence of numbers which are all the gradual results of exponentiation of the input number and are all lower than 1000
  */
 public class XtremeSchoolCalc {
 
@@ -368,15 +368,12 @@ public class XtremeSchoolCalc {
          * in 1990 (newest revision of BMR formula) Dividing the male and female
          * formulas
          */
-        if (gender.equals("M") || gender.equals("F")) {
-            if (male) {
+        if (male) {
                 BMR1 = (10 * weight) + (6.25 * height) - (5 * age) + 5;
             } else {
                 BMR1 = (10 * weight) + (6.25 * height) - (5 * age) - 161;
             }
-        } else {
-            throw new Error("Enter M or F");
-        }
+
 
         // Asking for level of exercise
 
@@ -419,18 +416,24 @@ public class XtremeSchoolCalc {
     }
 
     public static void powerOfTwo() {
+        // Returns a sequence of numbers which are all the gradual results of exponentiation of the input number and are all lower than 1000
         double input;
         double output;
         double repeat;
-        System.out.println("");
-        Scanner scany = new Scanner(System.in);
-        input = scany.nextDouble();
+        Scanner sca = new Scanner(System.in);
+        System.out.println("Enter a number:");
+        // Variables needed for the for cycle
+        input = sca.nextDouble();
         repeat = Math.pow(input, 2);
-        for(output = repeat; output <= 100; output*=2 ) {
-            System.out.println("The number " + input + " squared is equal to: /n" + output);
+        System.out.println("The number " + input + " squared is equal to: ");
+        // For cycle to make a sequence of numbers
+        for (output = repeat; output <= 1000; output *= 2) {
+            System.out.print(" " + output + " ");
         }
-
-        scany.close();
+        System.out.println("");
+        mainMenu();
+        sca.close();
+        // End of Power of 2 calculator
     }
 
     public static void sleepCalc() { // calculates when to wake up based on current time and when to go to sleep based on enetered wake up time
