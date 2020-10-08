@@ -420,8 +420,8 @@ public class XtremeSchoolCalc {
         System.out.println("=====================================");
         System.out.println("|         " + ANSI_GREEN + "Sleep Calculator" + ANSI_RESET + "          |");
         System.out.println("|-----------------------------------|");
-        System.out.println("|   1. When should I go to sleep?   |");
-        System.out.println("|   2. When should I wake up?       |");
+        System.out.println("|   1. When should I wake up?       |");
+     // System.out.println("|   2. When should I go to sleep?   |");
         System.out.println("|   0. Back to Main Menu            |");
         System.out.println("=====================================");
 
@@ -430,12 +430,12 @@ public class XtremeSchoolCalc {
 
         switch (selectedOption) { // menu options
             case 1:
-                whenToSleep();
-                break;
-            case 2:
                 whenToWake();
                 break;
-            case 0:
+     /*     case 2:
+                whenToSleep();
+                break;
+     */     case 0:
                 mainMenu();
                 break;
             default:
@@ -447,11 +447,11 @@ public class XtremeSchoolCalc {
         }
         sc.close();
     }
-
+    
     public static void whenToSleep() { // user inputs wake up time; calculates sleep time in 90 min intervals
         Scanner sc = new Scanner(System.in);
         System.out.println("When do you want to wake up? (hh:mm)");
-
+        String wakeUpTime = sc.next();
         sc.close();
     }
 
