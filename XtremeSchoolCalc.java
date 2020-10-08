@@ -5,6 +5,10 @@ import java.util.Scanner;
 /**
  * XtremeSchoolCalc by mfmcl && DominikK07
  * 
+ * github: https://github.com/mfmcl/XtremeSchoolCalc
+ * 
+ * Presentation date: Oct 8 2020
+ * 
  * Includes varius functions that could be useful for LEAF students
  * 
  * 1. Sleep calculator
