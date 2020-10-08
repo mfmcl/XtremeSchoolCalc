@@ -31,7 +31,7 @@ public class XtremeSchoolCalc {
         System.out.println("|   0. Exit                |");
         System.out.println("============================");
 
-        System.out.println("Select option");
+        System.out.println("| Select option");
         int selectedOption = sc.nextInt();
 
         switch (selectedOption) { // menu options
@@ -464,11 +464,49 @@ public class XtremeSchoolCalc {
     }
 
     public static void sleepCalc() {
-        System.out.println("============================");
-        System.out.println("|     Sleep Calculator     |");
-        System.out.println("============================");
+        Scanner sc = new Scanner(System.in);
 
+        System.out.println("=====================================");
+        System.out.println("|          Sleep Calculator         |");
+        System.out.println("=====================================");
+        System.out.println("|   1. When should I go to sleep?   |");
+        System.out.println("|   2. When should I wake up?       |");
+        System.out.println("|   0. Back to Main Menu            |");
+        System.out.println("=====================================");
+        
+        System.out.println("| Select option");
+        int selectedOption = sc.nextInt();
+
+        switch (selectedOption) { // menu options
+            case 1:
+                whenToSleep();
+                break;
+            case 2:
+                whenToWake();
+                break;
+            case 0:
+                mainMenu();
+                break;
+            default:
+                System.out.println("*********************************");
+                System.out.println("   Please enter a valid number   ");
+                System.out.println("*********************************");
+                sleepCalc();
+                break;
+        }
+        sc.close();
     }
 
+    public static void whenToSleep() {  // user inputs wake up time; calculates sleep time in 90 min intervals
+        Scanner sc = new Scanner(System.in);
+        System.out.println("When do you want to wake up? (hh:mm)");
+
+        
+        sc.close();
+    }
+
+    public static void whenToWake() {   // user inputs go to sleep time; calculates wake up time in 90 min intervals
+        
+    }
 
 }
