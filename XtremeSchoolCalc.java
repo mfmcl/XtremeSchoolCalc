@@ -327,6 +327,8 @@ public class XtremeSchoolCalc {
     }
 
     public static void nutritionCalculator() {
+        // TODO: Have to fix this shit
+
         // Defining all needed variables
         int height;
         int weight;
@@ -335,6 +337,7 @@ public class XtremeSchoolCalc {
         double BMR1 = 0.0;
         double BMRf = 0.0;
         int exercise;
+        boolean male;
         Scanner scany = new Scanner(System.in);
         // Daily calorie intake calculator based on the BMR formula
         System.out.println("==================================");
@@ -353,28 +356,23 @@ public class XtremeSchoolCalc {
         System.out.print("Enter your gender (M or F): ");
         gender = scany.next();
 
-        boolean male = (gender == "M");
+        male = (gender == "M");
         scany.close();
-        try {
-            if ((gender != "M") || (gender != "F")) {
-                throw new Error("Enter 'M' for male or 'F' for female");
-                
-            } else {
-                /*
+
+        /*     
          * BMR formula -> The Harris–Benedict equations revised by Mifflin and St Jeor
          * in 1990 (newest revision of BMR formula) Dividing the male and female
          * formulas
          */
-                if (male) {
-                     BMR1 = (10 * weight) + (6.25 * height) - (5 * age) + 5;
-                } else {
-                    BMR1 = (10 * weight) + (6.25 * height) - (5 * age) - 161;
-        }
+        if (gender.equals("M") || gender.equals("F")) {
+            if (male) {
+                BMR1 = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+            } else {
+                BMR1 = (10 * weight) + (6.25 * height) - (5 * age) - 161;
             }
-        } catch (Exception e) {
-            System.out.println(e);
+        } else {
+            throw new Error("Enter M or F");
         }
-
         
         // Asking for level of exercise
 
@@ -389,8 +387,9 @@ public class XtremeSchoolCalc {
         System.out.println("|       (i.e. swimming two hours daily) |");
         System.out.println("=========================================");
 
+        Scanner sc = new Scanner(System.in);
         System.out.println("How much exercise do you get?");
-        exercise = scany.nextInt();
+        exercise = sc.nextInt();
         // Finding the final BMR value (BMRf) based on the BMR expenditure formulas
         switch (exercise) {
             case 1:
@@ -411,7 +410,7 @@ public class XtremeSchoolCalc {
         // Printing out BMR value
         System.out.println("Your recommended minimum daily calorie intake is: " + BMRf);
         mainMenu();
-        scany.close();
+        sc.close();
         // End of nutritionCalculator method
     }
 
