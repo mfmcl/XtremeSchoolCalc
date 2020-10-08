@@ -40,7 +40,7 @@ public class XtremeSchoolCalc {
         System.out.println("|   2. " + ANSI_YELLOW + "Study hours      " + ANSI_RESET + "   |");
         System.out.println("|   3. " + ANSI_RED    + "Hex-Dec-Bin      " + ANSI_RESET + "   |");
         System.out.println("|   4. " + ANSI_PURPLE + "Calorie calc     " + ANSI_RESET + "   |");
-        System.out.println("|   5. " + ANSI_CYAN   + "Something        " + ANSI_RESET + "   |");
+        System.out.println("|   5. " + ANSI_CYAN   + "Power of 2 calc  " + ANSI_RESET + "   |");
         System.out.println("|   0. " + ANSI_BLUE   + "Exit             " + ANSI_RESET + "   |");
         System.out.println("============================");
 
