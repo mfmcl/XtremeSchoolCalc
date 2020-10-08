@@ -20,15 +20,15 @@ public class XtremeSchoolCalc {
         System.out.println("|--------------------------|");
         System.out.println("| What do you need help    |");
         System.out.println("| with today?              |");
-        System.out.println("|   1. Sleep calculator    |");
-        System.out.println("|   2. Study hours         |");
-        System.out.println("|   3. Hex-dec-bin         |");
-        System.out.println("|   4. Calorie calc        |");
-        System.out.println("|   5. Option 5            |");
-        System.out.println("|   0. Exit                |");
+        System.out.println("|   1. " + ANSI_GREEN  + "Sleep calculator " + ANSI_RESET + "   |");
+        System.out.println("|   2. " + ANSI_YELLOW + "Study hours      " + ANSI_RESET + "   |");
+        System.out.println("|   3. " + ANSI_RED    + "Hex-Dec-Bin      " + ANSI_RESET + "   |");
+        System.out.println("|   4. " + ANSI_PURPLE + "Calorie calc     " + ANSI_RESET + "   |");
+        System.out.println("|   5. " + ANSI_CYAN   + "Something        " + ANSI_RESET + "   |");
+        System.out.println("|   0. " + ANSI_BLUE   + "Exit             " + ANSI_RESET + "   |");
         System.out.println("============================");
 
-        System.out.println("| Select option");
+        System.out.print("| Select option: ");
         int selectedOption = sc.nextInt();
 
         switch (selectedOption) { // menu options
@@ -48,7 +48,7 @@ public class XtremeSchoolCalc {
                 powerOfTwo();
                 break;
             case 0: // ends program
-                System.out.println("Cya! (or Java ya)");
+                System.out.println("| Cya! (or" + ANSI_RED + " Java " + ANSI_RESET + "ya) |");
                 System.exit(0);
                 break;
 
@@ -69,14 +69,13 @@ public class XtremeSchoolCalc {
         int week = 0;
         // Study hours calulator method
         System.out.println("==================================");
-        System.out.println("|     Study Hours calculator     |");
+        System.out.println("|     " + ANSI_YELLOW + "Study Hours calculator" + ANSI_RESET + "     |");
         System.out.println("==================================");
         Scanner scany = new Scanner(System.in);
         // Ask for the students's year of study
         System.out.print("Year (1-4): ");
         year = scany.nextInt();
         // Ask for the current school year term
-        // FIXME: how many terms are there?
         System.out.print("Term: ");
         term = scany.nextInt();
         // If its the first term ask for the number of the week
@@ -220,7 +219,7 @@ public class XtremeSchoolCalc {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("============================");
-        System.out.println("|  Hex-Dec-Bin Converter   |");
+        System.out.println("|   " + ANSI_RED + "Hex-Dec-Bin Converter" + ANSI_RESET + "  |");
         System.out.println("|--------------------------|");
         System.out.println("|   1. Enter hexadecimal   |");
         System.out.println("|   2. Enter decimal       |");
@@ -330,7 +329,7 @@ public class XtremeSchoolCalc {
         Scanner scany = new Scanner(System.in);
         // Daily calorie intake calculator based on the BMR formula
         System.out.println("==================================");
-        System.out.println("|     BMR calorie calculator     |");
+        System.out.println("|     " + ANSI_PURPLE + "BMR calorie calculator" + ANSI_RESET + "     |");
         System.out.println("==================================");
         // Asking for the person's height
         System.out.print("Enter your height (cm): ");
@@ -419,7 +418,7 @@ public class XtremeSchoolCalc {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("=====================================");
-        System.out.println("|         Sleep Calculator          |");
+        System.out.println("|         " + ANSI_GREEN + "Sleep Calculator" + ANSI_RESET + "          |");
         System.out.println("|-----------------------------------|");
         System.out.println("|   1. When should I go to sleep?   |");
         System.out.println("|   2. When should I wake up?       |");
@@ -457,8 +456,7 @@ public class XtremeSchoolCalc {
     }
 
     public static void whenToWake() { // calculates wake up time in 90 min intervals from current time
-        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
-
+                
         // variables for current time and wake up times
         // 1 sleep cycle = 90 min = 5400 s
         Date currentTime = new Date(System.currentTimeMillis());
@@ -466,17 +464,29 @@ public class XtremeSchoolCalc {
         Date timeIn4cycles = new Date(System.currentTimeMillis() + (5400 * 4) * 1000);
         Date timeIn5cycles = new Date(System.currentTimeMillis() + (5400 * 5) * 1000);
         Date timeIn6cycles = new Date(System.currentTimeMillis() + (5400 * 6) * 1000);
-
-        // print results
+        
+        // create time format HH:mm
+        SimpleDateFormat timeFormat = new SimpleDateFormat("HH:mm");
+        // print results in correct time format
         System.out.println("============================================");
-        System.out.println("|          Current time is: " + formatter.format(currentTime) + "          |");
+        System.out.println("|          Current time is: " + ANSI_CYAN + timeFormat.format(currentTime) + ANSI_RESET + "          |");
         System.out.println("|------------------------------------------|");
-        System.out.println("| For 4.5 hours of sleep wake up at: " + formatter.format(timeIn3cycles) + " |");
-        System.out.println("| For 6 hours of sleep wake up at:   " + formatter.format(timeIn4cycles) + " |");
-        System.out.println("| For 7.5 hours of sleep wake up at: " + formatter.format(timeIn5cycles) + " |");
-        System.out.println("| For 9 hours of sleep wake up at:   " + formatter.format(timeIn6cycles) + " |");
+        System.out.println("| For 4.5 hours of sleep wake up at: " + ANSI_RED + timeFormat.format(timeIn3cycles) + ANSI_RESET + " |");
+        System.out.println("| For 6 hours of sleep wake up at:   " + ANSI_YELLOW + timeFormat.format(timeIn4cycles) + ANSI_RESET + " |");
+        System.out.println("| For 7.5 hours of sleep wake up at: " + ANSI_GREEN + timeFormat.format(timeIn5cycles) + ANSI_RESET + " |");
+        System.out.println("| For 9 hours of sleep wake up at:   " + ANSI_GREEN + timeFormat.format(timeIn6cycles) + ANSI_RESET + " |");
         System.out.println("============================================");
         mainMenu();
     }
 
+    // ANSI escape codes - set colors in console output
+    public static final String ANSI_RESET = "\u001B[0m";
+    public static final String ANSI_BLACK = "\u001B[30m";
+    public static final String ANSI_RED = "\u001B[31m";
+    public static final String ANSI_GREEN = "\u001B[32m";
+    public static final String ANSI_YELLOW = "\u001B[33m";
+    public static final String ANSI_BLUE = "\u001B[34m";
+    public static final String ANSI_PURPLE = "\u001B[35m";
+    public static final String ANSI_CYAN = "\u001B[36m";
+    public static final String ANSI_WHITE = "\u001B[37m";
 }
