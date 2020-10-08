@@ -361,7 +361,6 @@ public class XtremeSchoolCalc {
         gender = scany.next();
 
         male = (gender == "M");
-        scany.close();
 
         /*
          * BMR formula -> The Harris–Benedict equations revised by Mifflin and St Jeor
@@ -388,9 +387,8 @@ public class XtremeSchoolCalc {
         System.out.println("|       (i.e. swimming two hours daily) |");
         System.out.println("=========================================");
 
-        Scanner sc = new Scanner(System.in);
         System.out.println("How much exercise do you get?");
-        exercise = sc.nextInt();
+        exercise = scany.nextInt();
         // Finding the final BMR value (BMRf) based on the BMR expenditure formulas
         switch (exercise) {
             case 1:
@@ -411,7 +409,7 @@ public class XtremeSchoolCalc {
         // Printing out BMR value
         System.out.println("Your recommended minimum daily calorie intake is: " + BMRf);
         mainMenu();
-        sc.close();
+        scany.close();
         // End of nutritionCalculator method
     }
 
