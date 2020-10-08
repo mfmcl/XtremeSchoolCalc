@@ -405,7 +405,6 @@ public class XtremeSchoolCalc {
         // End of nutritionCalculator method
     }
 
-<<<<<<< HEAD
     public static void powerOfTwo(){
         double input;
         double output;
@@ -415,8 +414,5 @@ public class XtremeSchoolCalc {
         System.out.println("The number "+input+" squared is equal to: "+output);
 
         scany.close();
-=======
-    public static void testMethod() {
->>>>>>> d8355ab3add1061cd684f40b1fe24c18ce18f00a
     }
 }
