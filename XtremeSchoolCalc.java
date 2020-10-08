@@ -43,8 +43,7 @@ public class XtremeSchoolCalc {
                 nutritionCalculator();
                 break;
             case 5:
-                System.out.println("case 5");
-                testMethod();
+                powerOfTwo();
                 break;
             case 0: // ends program
                 System.out.println("Cya! (or Java ya)");
