@@ -404,4 +404,14 @@ public class XtremeSchoolCalc {
         // End of nutritionCalculator method
     }
 
+    public static void powerOfTwo(){
+        double input;
+        double output;
+        Scanner scany = new Scanner(System.in);
+        input = scany.nextDouble();
+        output = Math.pow(input, 2);
+        System.out.println("The number "+input+" squared is equal to: "+output);
+
+        scany.close();
+    }
 }
