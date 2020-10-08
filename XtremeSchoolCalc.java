@@ -226,13 +226,6 @@ public class XtremeSchoolCalc {
         // End of studyHours method
     }
 
-    public static void sleepCalc() {
-        System.out.println("============================");
-        System.out.println("|     Sleep Calculator     |");
-        System.out.println("============================");
-
-    }
-
     // TODO: exception handling
     public static void hexDecBinConverterMenu() { // Converts numbers to/from base 2, 10, 16
         Scanner sc = new Scanner(System.in);
@@ -470,4 +463,13 @@ public class XtremeSchoolCalc {
             input.close();
     
     }
+
+    public static void sleepCalc() {
+        System.out.println("============================");
+        System.out.println("|     Sleep Calculator     |");
+        System.out.println("============================");
+
+    }
+
+
 }
