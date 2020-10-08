@@ -44,6 +44,7 @@ public class XtremeSchoolCalc {
                 break;
             case 5:
                 System.out.println("case 5");
+                testMethod();
                 break;
             case 0: // ends program
                 System.out.println("Cya! (or Java ya)");
@@ -404,4 +405,6 @@ public class XtremeSchoolCalc {
         // End of nutritionCalculator method
     }
 
+    public static void testMethod() {
+    }
 }
