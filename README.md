@@ -11,8 +11,8 @@ Project for APCSA by **mfmcl** and **DominikK07**
 	+ Convert numbers between base 2, 10 and 16
 4. BMR calorie calculator <br>
 	+ Calculate daily recommended calorie intake based on your height, age, weight and amount of exercise
-5. *Function* <br>
-	+ *Function description*
+5. Power of 2 calculator <br>
+	+ Returns a sequence of numbers which are all the gradual results of exponentiation of the input number and are all lower than 1000
 
 
 
