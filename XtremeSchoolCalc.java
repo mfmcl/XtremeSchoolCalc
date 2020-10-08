@@ -495,13 +495,15 @@ public class XtremeSchoolCalc {
                 sleepCalc();
                 break;
         }
-    
-
-        
+        sc.close();
     }
 
     public static void whenToSleep() {  // user inputs wake up time; calculates sleep time in 90 min intervals
+        Scanner sc = new Scanner(System.in);
+        System.out.println("When do you want to wake up? (hh:mm)");
+
         
+        sc.close();
     }
 
     public static void whenToWake() {   // user inputs go to sleep time; calculates wake up time in 90 min intervals
