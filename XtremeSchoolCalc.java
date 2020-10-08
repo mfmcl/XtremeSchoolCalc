@@ -217,7 +217,7 @@ public class XtremeSchoolCalc {
         System.out.println("============================");
         System.out.println("|     Sleep Calculator     |");
         System.out.println("============================");
-
+        
     }
 
     // TODO: exception handling
