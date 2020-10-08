@@ -209,7 +209,7 @@ public class XtremeSchoolCalc {
         }
         mainMenu();
         scany.close();
-        
+
         // End of studyHours method
     }
 
@@ -221,7 +221,7 @@ public class XtremeSchoolCalc {
     }
 
     // TODO: exception handling
-    public static void hexDecBinConverterMenu() { // Converts numbers to/from base 2, 10, 16 
+    public static void hexDecBinConverterMenu() { // Converts numbers to/from base 2, 10, 16
         Scanner sc = new Scanner(System.in);
 
         System.out.println("============================");
@@ -236,7 +236,7 @@ public class XtremeSchoolCalc {
         System.out.println("Select option");
         int selection = sc.nextInt();
 
-        switch (selection) { //selects input format
+        switch (selection) { // selects input format
             case 1:
                 hexToDecBin();
                 break;
@@ -274,7 +274,7 @@ public class XtremeSchoolCalc {
         System.out.println("| Hexadecimal: " + hex);
         System.out.println("| Decimal:     " + dec);
         System.out.println("| Binary:      " + bin);
-      
+
         // back to converter menu
         hexDecBinConverterMenu();
         sc.close();
@@ -326,7 +326,7 @@ public class XtremeSchoolCalc {
         int weight;
         int age;
         String gender;
-        double BMR1;
+        double BMR1 = 0.0;
         double BMRf = 0.0;
         int exercise;
         Scanner scany = new Scanner(System.in);
@@ -347,24 +347,29 @@ public class XtremeSchoolCalc {
         System.out.print("Enter your gender (M or F): ");
         gender = scany.next();
 
-        boolean male = gender == "M";
-
+        boolean male = (gender == "M");
+        scany.close();
         try {
-            boolean genderboo = gender == "M" || gender == "F";
-        } catch (Exception e) {
-            System.out.println("Enter 'M' for male or 'F' for female");
-        }
-
-        /*
+            if ((gender != "M") || (gender != "F")) {
+                throw new Error("Enter 'M' for male or 'F' for female");
+                
+            } else {
+                /*
          * BMR formula -> The Harris–Benedict equations revised by Mifflin and St Jeor
          * in 1990 (newest revision of BMR formula) Dividing the male and female
          * formulas
          */
-        if (male) {
-            BMR1 = (10 * weight) + (6.25 * height) - (5 * age) + 5;
-        } else {
-            BMR1 = (10 * weight) + (6.25 * height) - (5 * age) - 161;
+                if (male) {
+                     BMR1 = (10 * weight) + (6.25 * height) - (5 * age) + 5;
+                } else {
+                    BMR1 = (10 * weight) + (6.25 * height) - (5 * age) - 161;
         }
+            }
+        } catch (Exception e) {
+            System.out.println(e);
+        }
+
+        
         // Asking for level of exercise
 
         System.out.println("=========================================");
@@ -404,13 +409,14 @@ public class XtremeSchoolCalc {
         // End of nutritionCalculator method
     }
 
-    public static void powerOfTwo(){
+    public static void powerOfTwo() {
         double input;
         double output;
+        System.out.println("");
         Scanner scany = new Scanner(System.in);
         input = scany.nextDouble();
         output = Math.pow(input, 2);
-        System.out.println("The number "+input+" squared is equal to: "+output);
+        System.out.println("The number " + input + " squared is equal to: " + output);
 
         scany.close();
     }
