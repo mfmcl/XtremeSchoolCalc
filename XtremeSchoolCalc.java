@@ -19,7 +19,7 @@ public class XtremeSchoolCalc {
 
         System.out.println("============================");
         System.out.println("| Xtreme School Calculator |");
-        System.out.println("============================");
+        System.out.println("|--------------------------|");
         System.out.println("| What do you need help    |");
         System.out.println("| with today?              |");
         System.out.println("|   1. Sleep calculator    |");
@@ -54,7 +54,7 @@ public class XtremeSchoolCalc {
                 try {
                     testMethod();
                 } catch (ParseException e) {
-                    //TODO: handle exception
+                    // TODO: handle exception
                     System.out.println("enter correct value");
                 }
                 break;
@@ -232,7 +232,7 @@ public class XtremeSchoolCalc {
 
         System.out.println("============================");
         System.out.println("|  Hex-Dec-Bin Converter   |");
-        System.out.println("============================");
+        System.out.println("|--------------------------|");
         System.out.println("|   1. Enter hexadecimal   |");
         System.out.println("|   2. Enter decimal       |");
         System.out.println("|   3. Enter binary        |");
@@ -359,7 +359,7 @@ public class XtremeSchoolCalc {
         male = (gender == "M");
         scany.close();
 
-        /*     
+        /*
          * BMR formula -> The Harris–Benedict equations revised by Mifflin and St Jeor
          * in 1990 (newest revision of BMR formula) Dividing the male and female
          * formulas
@@ -373,12 +373,12 @@ public class XtremeSchoolCalc {
         } else {
             throw new Error("Enter M or F");
         }
-        
+
         // Asking for level of exercise
 
         System.out.println("=========================================");
         System.out.println("|          Level of exercise            |");
-        System.out.println("=========================================");
+        System.out.println("|---------------------------------------|");
         System.out.println("|  1. Sedentary or light activity       |");
         System.out.println("|       (i.e. little or no exercise)    |");
         System.out.println("|  2. Active or moderately active       |");
@@ -428,52 +428,52 @@ public class XtremeSchoolCalc {
 
     public static void testMethod() throws ParseException {
         Scanner input = new Scanner(System.in);
-            System.out.print("Enter first time (hh:mm): ");
-            String time = input.nextLine();
-            System.out.println();
-            System.out.print("Enter second time (hh:mm): ");
-            String time2 = input.nextLine();
-            System.out.println();
-            DateFormat sdf = new SimpleDateFormat("hh:mm");
-            Date d1 = sdf.parse(time);
-            Date d2 = sdf.parse(time2);
-        
-            System.out.println("Time: " + sdf.format(d1));
-            System.out.println("Time: " + sdf.format(d2));
-            if(d1.after(d2)){
-                long diffMs = d1.getTime() - d2.getTime();
-                long diffSec = diffMs / 1000;
-                long min = diffSec / 60;
-                long sec = diffSec % 60;
-                System.out.println("The difference is "+min+" minutes and "+sec+" seconds.");
-            }
-        
-            if(d1.before(d2)){
-                long diffMs = d2.getTime() - d1.getTime();
-                long diffSec = diffMs / 1000;
-                long min = diffSec / 60;
-                long sec = diffSec % 60;
-                System.out.println("The difference is "+min+" minutes and "+sec+" seconds.");
-            }
-        
-            if(d1.equals(d2)){
-                System.out.println("The difference is 0 minutes and 0 seconds.");
-            }
-            input.close();
-    
+        System.out.print("Enter first time (hh:mm): ");
+        String time = input.nextLine();
+        System.out.println();
+        System.out.print("Enter second time (hh:mm): ");
+        String time2 = input.nextLine();
+        System.out.println();
+        DateFormat sdf = new SimpleDateFormat("hh:mm");
+        Date d1 = sdf.parse(time);
+        Date d2 = sdf.parse(time2);
+
+        System.out.println("Time: " + sdf.format(d1));
+        System.out.println("Time: " + sdf.format(d2));
+        if (d1.after(d2)) {
+            long diffMs = d1.getTime() - d2.getTime();
+            long diffSec = diffMs / 1000;
+            long min = diffSec / 60;
+            long sec = diffSec % 60;
+            System.out.println("The difference is " + min + " minutes and " + sec + " seconds.");
+        }
+
+        if (d1.before(d2)) {
+            long diffMs = d2.getTime() - d1.getTime();
+            long diffSec = diffMs / 1000;
+            long min = diffSec / 60;
+            long sec = diffSec % 60;
+            System.out.println("The difference is " + min + " minutes and " + sec + " seconds.");
+        }
+
+        if (d1.equals(d2)) {
+            System.out.println("The difference is 0 minutes and 0 seconds.");
+        }
+        input.close();
+
     }
 
     public static void sleepCalc() {
         Scanner sc = new Scanner(System.in);
 
         System.out.println("=====================================");
-        System.out.println("|          Sleep Calculator         |");
-        System.out.println("=====================================");
+        System.out.println("|         Sleep Calculator          |");
+        System.out.println("|-----------------------------------|");
         System.out.println("|   1. When should I go to sleep?   |");
         System.out.println("|   2. When should I wake up?       |");
         System.out.println("|   0. Back to Main Menu            |");
         System.out.println("=====================================");
-        
+
         System.out.println("| Select option");
         int selectedOption = sc.nextInt();
 
@@ -497,16 +497,34 @@ public class XtremeSchoolCalc {
         sc.close();
     }
 
-    public static void whenToSleep() {  // user inputs wake up time; calculates sleep time in 90 min intervals
+    public static void whenToSleep() { // user inputs wake up time; calculates sleep time in 90 min intervals
         Scanner sc = new Scanner(System.in);
         System.out.println("When do you want to wake up? (hh:mm)");
 
-        
         sc.close();
     }
 
-    public static void whenToWake() {   // user inputs go to sleep time; calculates wake up time in 90 min intervals
-        
+    public static void whenToWake() { // calculates wake up time in 90 min intervals from current time
+        SimpleDateFormat formatter = new SimpleDateFormat("HH:mm");
+
+        // variables for current time and wake up times
+        // 1 sleep cycle = 90 min = 5400 s
+        Date currentTime = new Date(System.currentTimeMillis());
+        Date timeIn3cycles = new Date(System.currentTimeMillis() + (5400 * 3) * 1000);
+        Date timeIn4cycles = new Date(System.currentTimeMillis() + (5400 * 4) * 1000);
+        Date timeIn5cycles = new Date(System.currentTimeMillis() + (5400 * 5) * 1000);
+        Date timeIn6cycles = new Date(System.currentTimeMillis() + (5400 * 6) * 1000);
+
+        // print results
+        System.out.println("============================================");
+        System.out.println("|          Current time is: " + formatter.format(currentTime) + "          |");
+        System.out.println("|------------------------------------------|");
+        System.out.println("| For 4.5 hours of sleep wake up at: " + formatter.format(timeIn3cycles) + " |");
+        System.out.println("| For 6 hours of sleep wake up at:   " + formatter.format(timeIn4cycles) + " |");
+        System.out.println("| For 7.5 hours of sleep wake up at: " + formatter.format(timeIn5cycles) + " |");
+        System.out.println("| For 9 hours of sleep wake up at:   " + formatter.format(timeIn6cycles) + " |");
+        System.out.println("============================================");
+
     }
 
 }
