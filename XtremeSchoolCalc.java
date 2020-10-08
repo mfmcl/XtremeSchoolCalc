@@ -284,7 +284,7 @@ public class XtremeSchoolCalc {
         String hex = Integer.toHexString(dec);
         String bin = Integer.toBinaryString(dec);
 
-        // result
+        // print result
         System.out.println("| Decimal:     " + dec);
         System.out.println("| Hexadecimal: " + hex);
         System.out.println("| Binary:      " + bin);
@@ -304,7 +304,7 @@ public class XtremeSchoolCalc {
         int dec = Integer.parseInt(bin, 2);
         String hex = Integer.toHexString(dec);
 
-        // result
+        // print result
         System.out.println("| Binary:      " + bin);
         System.out.println("| Decimal:     " + dec);
         System.out.println("| Hexadecimal: " + hex);
@@ -414,7 +414,7 @@ public class XtremeSchoolCalc {
         scany.close();
     }
 
-    public static void sleepCalc() {
+    public static void sleepCalc() { // calculates when to wake up based on current time and when to go to sleep based on enetered wake up time
         Scanner sc = new Scanner(System.in);
 
         System.out.println("=====================================");
@@ -449,6 +449,7 @@ public class XtremeSchoolCalc {
     }
     
     public static void whenToSleep() { // user inputs wake up time; calculates sleep time in 90 min intervals
+        //TODO: make this work
         Scanner sc = new Scanner(System.in);
         System.out.println("When do you want to wake up? (hh:mm)");
         String wakeUpTime = sc.next();
